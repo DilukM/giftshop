@@ -24,13 +24,16 @@ app.use(
 );
 
 // CORS configuration
+const allowedOrigins = JSON.parse(process.env.FRONTEND_URLS);
+
 app.use(
   cors({
-    origin: [
-      "https://giftshop-hazel.vercel.app",
-      "http://giftshop-hazel.vercel.app",
-      process.env.FRONTEND_URL2,
-    ],
+    origin: (origin, callback) => {
+      // allow requests with no origin (like mobile apps, curl, server-to-server)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("CORS policy: Origin not allowed"), false);
+    },
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: [
