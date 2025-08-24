@@ -26,7 +26,11 @@ app.use(
 // CORS configuration
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL1, process.env.FRONTEND_URL2],
+    origin: [
+      "https://giftshop-hazel.vercel.app/",
+      "http://giftshop-hazel.vercel.app/",
+      process.env.FRONTEND_URL2,
+    ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: [
