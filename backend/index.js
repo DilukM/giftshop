@@ -27,8 +27,8 @@ app.use(
 app.use(
   cors({
     origin: [
-      "https://giftshop-hazel.vercel.app/",
-      "http://giftshop-hazel.vercel.app/",
+      "https://giftshop-hazel.vercel.app",
+      "http://giftshop-hazel.vercel.app",
       process.env.FRONTEND_URL2,
     ],
     credentials: true,
