@@ -278,7 +278,7 @@ const Cart = () => {
                 <motion.button
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full btn-primary group"
+                  className="w-full btn-primary group flex justify-center"
                 >
                   Proceed to Checkout
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

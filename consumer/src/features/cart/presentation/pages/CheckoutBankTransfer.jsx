@@ -774,7 +774,7 @@ const CheckoutBankTransfer = () => {
                 whileTap={{ scale: 0.98 }}
                 onClick={handlePlaceOrder}
                 disabled={submitting}
-                className={`w-full btn-primary group mb-4 ${
+                className={`w-full btn-primary group mb-4 flex justify-center ${
                   submitting ? "opacity-60 cursor-not-allowed" : ""
                 }`}
               >
